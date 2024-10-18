@@ -3,6 +3,7 @@ import { Instagram, Linkedin, PhoneCall } from "lucide-react";
 import Members from "./_components/Members";
 import Image from "next/image";
 import Navbar from "./_components/Navbar";
+import Partners from "./_components/Partners";
 
 export default function Home() {
 
@@ -87,7 +88,7 @@ export default function Home() {
       </Suspense>
 
       {/* Our Partners */}
-      <Suspense>{/* <Partners /> */}</Suspense>
+      <Suspense><Partners /></Suspense>
 
       {/* Be Our Partner */}
       <section id="partner" className="py-20 bg-gray-200">
