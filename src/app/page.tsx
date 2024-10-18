@@ -1,100 +1,185 @@
+import { Suspense } from "react";
+import { Facebook, Instagram, Twitter } from "lucide-react";
+import Members from "./_components/Members";
+import Partners from "./_components/Partners";
 import Image from "next/image";
+import Navbar from "./_components/Navbar";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* Header */}
+      <header className="bg-gradient-to-r from-[#4a021e] to-[#b98322] text-white p-4 shadow-md">
+        <div className="container mx-auto flex justify-between items-center relative">
+          <div className="flex items-center justify-center gap-2">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/logo.png"
+              alt="Tusker Power Logo"
+              height={60}
+              width={60}
+              className="aspect-square"
             />
-            Deploy now
-          </a>
+            <Image
+              src="/f1schools.png"
+              alt="Tusker Power Logo"
+              height={60}
+              width={60}
+              className="aspect-square"
+            />
+          </div>
+          <Suspense>
+            <Navbar />
+          </Suspense>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="bg-[#4a021e] text-white py-20">
+        <div className="container mx-auto text-center">
+          <h2 className="text-5xl font-bold mb-4">Tusker Power</h2>
+          <p className="text-xl mb-8">
+            Avançando na competição das Escolas de F1 com inovação e
+            determinação
+          </p>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#about"
+            className="bg-secondary text-gray-100 px-6 py-3 rounded-full font-bold hover:bg-opacity-80 hover:text-white transition duration-300"
           >
-            Read our docs
+            Conheça
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* About Us */}
+      <section id="about" className="py-20">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-8 text-[#722F37]">
+            About Us
+          </h2>
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <Image
+                src="/placeholder.svg"
+                alt="Tusker Power Team"
+                className="rounded-lg shadow-lg"
+                height={400}
+                width={600}
+              />
+            </div>
+            <div className="md:w-1/2 md:pl-8">
+              <p className="text-lg mb-4">
+                Tusker Power is a dedicated team of six talented students
+                participating in the F1 Schools competition. Our passion for
+                engineering, design, and innovation drives us to create
+                cutting-edge miniature F1 cars that push the boundaries of speed
+                and aerodynamics.
+              </p>
+              <p className="text-lg">
+                With a focus on teamwork, creativity, and technical excellence,
+                we strive to make our mark in the world of F1 Schools while
+                promoting STEM education and sustainable practices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Suspense>
+        <Members />
+      </Suspense>
+
+      {/* Our Partners */}
+      <Suspense>
+        <Partners />
+      </Suspense>
+
+      {/* Be Our Partner */}
+      <section id="partner" className="py-20 bg-gray-200">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8 text-[#722F37]">
+            Be Our Partner
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Join us in our journey to success in the F1 Schools competition.
+            Your support can help us innovate, create, and inspire the next
+            generation of engineers and designers.
+          </p>
+          <a
+            href="#"
+            className="bg-[#722F37] text-white px-6 py-3 rounded-full font-bold hover:bg-opacity-80 transition duration-300"
+          >
+            Partner With Us
+          </a>
+        </div>
+      </section>
+
+      {/* Social Project */}
+      <section id="social" className="py-20">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-8 text-[#722F37]">
+            Our Social Project
+          </h2>
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <Image
+                src="/placeholder.svg?height=400&width=600"
+                alt="Social Project"
+                className="rounded-lg shadow-lg"
+                height={400}
+                width={600}
+              />
+            </div>
+            <div className="md:w-1/2 md:pl-8">
+              <h3 className="text-2xl font-bold mb-4 text-[#722F37]">
+                STEM Education Outreach
+              </h3>
+              <p className="text-lg mb-4">
+                At Tusker Power, we believe in giving back to our community. Our
+                social project focuses on promoting STEM education in local
+                schools, inspiring young minds to explore the exciting world of
+                science, technology, engineering, and mathematics.
+              </p>
+              <p className="text-lg mb-6">
+                Through workshops, mentoring sessions, and interactive
+                demonstrations, we aim to spark curiosity and foster a love for
+                learning among students of all ages.
+              </p>
+              <a
+                href="#"
+                className="bg-[#FFD700] text-[#722F37] px-6 py-3 rounded-full font-bold hover:bg-opacity-80 transition duration-300"
+              >
+                Learn More About Our Impact
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#722F37] text-white py-8">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <h3 className="text-2xl font-bold mb-2">Tusker Power</h3>
+              <p>Powering innovation in F1 Schools</p>
+            </div>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-[#FFD700]">
+                <Facebook />
+              </a>
+              <a href="#" className="hover:text-[#FFD700]">
+                <Twitter />
+              </a>
+              <a href="#" className="hover:text-[#FFD700]">
+                <Instagram />
+              </a>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <p>&copy; 2024 Tusker Power. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
