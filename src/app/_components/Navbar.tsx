@@ -1,7 +1,7 @@
 'use client'
 
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import { AlignJustifyIcon } from "lucide-react";
+import { Instagram, Linkedin, PhoneCall, AlignJustifyIcon } from "lucide-react";
 
 
 
@@ -14,6 +14,12 @@ export default function Navbar() {
     { id: 'social', label: 'Social Project' },
   ]
 
+  const socialIcons = [
+    { href: "https://wa.me/5512997480571", icon: <PhoneCall /> },
+    { href: "https://www.instagram.com/tuskerpower_/", icon: <Instagram /> },
+    { href: "https://www.linkedin.com/in/tuskerpowerf1/", icon: <Linkedin /> },
+  ];
+
   return (
     <nav>
       <div className="block md:hidden">
@@ -25,7 +31,16 @@ export default function Navbar() {
                 <a className="font-semibold text-base" href={`#${section.id}`}>{section.label}</a>
               </MenuItem>
             ))}
+            <div className="flex w-full gap-6 items-center justify-center mt-4">
+              {socialIcons.map((social) => (
+                <a className="text-sm" key={social.href} href={social.href} target="_blank">
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </MenuItems>
+          
+          
         </Menu>
       </div>
 

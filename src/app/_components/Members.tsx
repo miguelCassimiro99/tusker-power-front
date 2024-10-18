@@ -9,60 +9,75 @@ export default function Members() {
 
     const teamMembers = [
       {
-        name: "John Doe",
-        role: "Team Leader",
-        image: "/placeholder.svg?height=300&width=300",
+        name: "Lucas Salgado",
+        role: "Gestor de Projetos Sociais",
+        image: "/members/lucas.jpeg",
       },
       {
-        name: "Jane Smith",
-        role: "Design Engineer",
-        image: "/placeholder.svg?height=300&width=300",
+        name: "João Lucas",
+        role: "Engenheiro",
+        image: "/members/joao-lucas.jpeg",
       },
       {
-        name: "Mike Johnson",
-        role: "Manufacturing Engineer",
-        image: "/placeholder.svg?height=300&width=300",
+        name: "Leticia Siqueira",
+        role: "Engenheira",
+        image: "/members/leticia-siqueira.jpeg",
       },
       {
-        name: "Emily Brown",
-        role: "Resource Manager",
-        image: "/placeholder.svg?height=300&width=300",
+        name: "Isabella Bellotti",
+        role: "Líder da Equipe",
+        image: "/members/isa.jpeg",
       },
       {
-        name: "Alex Lee",
-        role: "Graphic Designer",
-        image: "/placeholder.svg?height=300&width=300",
+        name: "Guilherme",
+        role: "Engenheiro",
+        image: "/members/gui-barcelos.jpeg",
       },
       {
-        name: "Sarah Wilson",
-        role: "Marketing Manager",
-        image: "/placeholder.svg?height=300&width=300",
+        name: "Sophia",
+        role: "Social Media",
+        image: "/members/sophia.jpeg",
+      },
+      {
+        name: "Fábio",
+        role: "Técnico da Equipe",
+        image: "/members/fabio.jpeg",
       },
     ];
 
     return (
       <section id="team" className="py-20 bg-gray-200">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-8 text-[#722F37]">
-            Our Team
+          <h2 className="text-4xl font-bold text-center mb-8 text-primary">
+            Nosso time
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden rounded-lg shadow-lg"
+                className="relative overflow-hidden rounded-lg shadow-lg flex"
                 onMouseEnter={() => setHoveredMember(index)}
                 onMouseLeave={() => setHoveredMember(null)}
               >
                 <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-auto"
+                  className="w-full h-auto object-cover"
                   width={200}
                   height={300}
                 />
+
+                <div className="text-black absolute md:hidden bottom-5 w-full flex flex-col justify-center items-center">
+                  <p className="bg-primary text-white text-lg px-2 w-fit shadow-lg">
+                    {member.name}
+                  </p>
+                  <p className="bg-secondary text-primary font-semibold px-2 w-fit shadow-lg">
+                    {member.role}
+                  </p>
+                </div>
+
                 <div
-                  className={`absolute inset-0 bg-[#722F37] bg-opacity-80 flex items-center justify-center transition-opacity duration-300 ${
+                  className={`absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center transition-opacity duration-300 ${
                     hoveredMember === index ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -78,6 +93,6 @@ export default function Members() {
           </div>
         </div>
       </section>
-    )
+    );
 
 }
