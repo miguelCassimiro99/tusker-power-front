@@ -88,7 +88,9 @@ export default function Home() {
       </Suspense>
 
       {/* Our Partners */}
-      <Suspense><Partners /></Suspense>
+      <Suspense>
+        <Partners />
+      </Suspense>
 
       {/* Be Our Partner */}
       <section id="partner" className="py-20 bg-gray-200">
@@ -97,9 +99,9 @@ export default function Home() {
             Seja nosso parceiro
           </h2>
           <p className="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
-            Join us in our journey to success in the F1 Schools competition.
-            Your support can help us innovate, create, and inspire the next
-            generation of engineers and designers.
+            Venha conosco nessa jornada de especial de aprendizado e excelencia da F1 in
+            Schools. Juntos vamos criar, inovar e inspirar a nova geração de
+            engenheiros e designers.
           </p>
           <a
             href="https://wa.me/5512997480571"
@@ -115,10 +117,10 @@ export default function Home() {
       <section id="social" className="py-20">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-8 text-[#722F37]">
-            Nosso projeto social
+            Inclusion Power
           </h2>
           <div className="flex flex-col items-center justify-between gap-10">
-            <div className="mb-8 md:mb-0">
+            {/* <div className="mb-8 md:mb-0">
               <Image
                 src="/equipe.webp"
                 alt="Social Project"
@@ -126,10 +128,10 @@ export default function Home() {
                 height={400}
                 width={600}
               />
-            </div>
+            </div> */}
             <div className="md:pl-8 px-2 md:px-0">
               <h3 className="text-2xl font-bold mb-4 text-primary">
-                Inclusion Power
+                O projeto social
               </h3>
               <p className="text-lg text-gray-800 mb-4">
                 Na Tusker Power, além de nossa dedicação à excelência na F1 in
